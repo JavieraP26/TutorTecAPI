@@ -36,7 +36,7 @@ class Fpdf2PdfService(PdfService):
         # Encabezado
         pdf.set_font("Helvetica", "B", 20)
         pdf.set_text_color(0, 120, 0)
-        pdf.cell(0, 12, "TecnoAmigo", ln=True, align="C")
+        pdf.cell(0, 12, "TutorTec", ln=True, align="C")
 
         pdf.set_font("Helvetica", "", 13)
         pdf.set_text_color(60, 60, 60)
@@ -100,7 +100,7 @@ class Fpdf2PdfService(PdfService):
         pdf.set_text_color(60, 60, 60)
         pdf.multi_cell(
             0, 7,
-            "Completaste tu camino en TecnoAmigo. "
+            "Completaste tu camino en TutorTec. "
             "Ahora tienes las herramientas para usar la tecnologia "
             "con confianza y autonomia. "
             "Cuando necesites repasar algo, este resumen te acompana.",

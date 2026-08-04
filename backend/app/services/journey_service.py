@@ -61,7 +61,7 @@ async def graduate(
     user = await _get_user(db, user_id)
 
     if user.journey_stage == JourneyStage.graduated:
-        raise ConflictError("Ya completaste tu camino en TecnoAmigo. ¡Felicitaciones!")
+        raise ConflictError("Ya completaste tu camino en TutorTec. ¡Felicitaciones!")
 
     achievements_earned, achievements_total = await _count_achievements(db, user_id)
     achievement_pct = round(achievements_earned / achievements_total * 100) if achievements_total else 0
@@ -95,7 +95,7 @@ async def graduate(
 
     summary = ExportedSummary(
         user_id=user_id,
-        title="Mi recorrido en TecnoAmigo",
+        title="Mi recorrido en TutorTec",
         file_url=file_url,
         summary_type="graduation",
     )

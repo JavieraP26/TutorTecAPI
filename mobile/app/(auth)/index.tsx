@@ -23,7 +23,7 @@ export default function SplashScreen() {
       <View style={styles.logoBox}>
         <Text style={styles.logoIcon}>🤝</Text>
       </View>
-      <Text style={styles.brand}>TecnoAmigo</Text>
+      <Text style={styles.brand}>TutorTec</Text>
       <Text style={styles.tagline}>Aprende tecnología a tu ritmo</Text>
 
       <View style={styles.dots}>

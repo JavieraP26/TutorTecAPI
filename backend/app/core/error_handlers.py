@@ -2,7 +2,7 @@
 Handlers globales de excepciones para FastAPI.
 
 Regla:
-  - Errores de dominio (TecnoAmigoError): log en su nivel apropiado, respuesta JSON limpia.
+  - Errores de dominio (TutorTecError): log en su nivel apropiado, respuesta JSON limpia.
   - Errores no esperados (Exception): log ERROR con traceback completo, respuesta genérica.
   - Nunca exponer detalles internos al cliente.
 """
@@ -11,7 +11,7 @@ import traceback
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-from app.core.exceptions import TecnoAmigoError
+from app.core.exceptions import TutorTecError
 from app.core.logging_config import get_logger
 
 logger = get_logger(__name__)
@@ -23,8 +23,8 @@ def _error_body(message: str) -> dict:
 
 def register_exception_handlers(app: FastAPI) -> None:
 
-    @app.exception_handler(TecnoAmigoError)
-    async def handle_domain_error(request: Request, exc: TecnoAmigoError) -> JSONResponse:
+    @app.exception_handler(TutorTecError)
+    async def handle_domain_error(request: Request, exc: TutorTecError) -> JSONResponse:
         log = getattr(logger, exc.log_level, logger.error)
         log(
             "[%s] %s %s → %s | interno: %s",

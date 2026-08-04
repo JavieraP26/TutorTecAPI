@@ -21,7 +21,7 @@ class TwilioSmsService(SmsService):
         import asyncio
         await asyncio.to_thread(
             self._client.messages.create,
-            body=f"Tu código TecnoAmigo es: {code}. Válido por 10 minutos.",
+            body=f"Tu código TutorTec es: {code}. Válido por 10 minutos.",
             from_=self._from_number,
             to=phone_number,
         )

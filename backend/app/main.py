@@ -16,7 +16,7 @@ from app.routers import (
 setup_logging()
 
 app = FastAPI(
-    title="TecnoAmigo API",
+    title="TutorTec API",
     description="Plataforma de inclusión digital para adultos mayores en Chile.",
     version="0.1.0",
 )

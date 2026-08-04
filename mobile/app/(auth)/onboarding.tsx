@@ -35,7 +35,7 @@ export default function OnboardingScreen() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <Text style={styles.title}>Bienvenido a TecnoAmigo</Text>
+          <Text style={styles.title}>Bienvenido a TutorTec</Text>
           <Text style={styles.subtitle}>Aprende tecnología a tu ritmo</Text>
         </View>
 

@@ -1,12 +1,12 @@
 """
-Excepciones de dominio de TecnoAmigo.
+Excepciones de dominio de TutorTec.
 
 Cada excepción tiene un mensaje legible para logs y un código HTTP sugerido.
 Los handlers en error_handlers.py las convierten a respuestas JSON.
 """
 
 
-class TecnoAmigoError(Exception):
+class TutorTecError(Exception):
     """Base de todas las excepciones de dominio."""
     http_status: int = 500
     log_level: str = "error"
@@ -18,32 +18,32 @@ class TecnoAmigoError(Exception):
         self.detail = detail or message
 
 
-class NotFoundError(TecnoAmigoError):
+class NotFoundError(TutorTecError):
     http_status = 404
     log_level = "warning"
 
 
-class ConflictError(TecnoAmigoError):
+class ConflictError(TutorTecError):
     http_status = 409
     log_level = "warning"
 
 
-class ValidationError(TecnoAmigoError):
+class ValidationError(TutorTecError):
     http_status = 400
     log_level = "warning"
 
 
-class UnauthorizedError(TecnoAmigoError):
+class UnauthorizedError(TutorTecError):
     http_status = 401
     log_level = "warning"
 
 
-class ForbiddenError(TecnoAmigoError):
+class ForbiddenError(TutorTecError):
     http_status = 403
     log_level = "warning"
 
 
-class ExternalServiceError(TecnoAmigoError):
+class ExternalServiceError(TutorTecError):
     """Error en servicio externo (Twilio, etc.)."""
     http_status = 502
     log_level = "error"
