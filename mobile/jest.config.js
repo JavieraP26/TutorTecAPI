@@ -1,7 +1,15 @@
 /** @type {import('jest').Config} */
 module.exports = {
   preset: 'jest-expo',
-  setupFilesAfterFramework: ['@testing-library/react-native/extend-expect'],
+
+  // Usar babel config de test que excluye el plugin de Reanimated/Worklets
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': [
+      'babel-jest',
+      { configFile: './babel.config.test.js' },
+    ],
+  },
+
   transformIgnorePatterns: [
     'node_modules/(?!(' +
       '(jest-)?react-native' +

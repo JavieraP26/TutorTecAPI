@@ -34,7 +34,7 @@ function badgeEmoji(trigger: TriggerType, area: string | null): string {
 
 function badgeLabel(trigger: TriggerType, area: string | null, threshold: number): string {
   if (trigger === 'assessment_complete') return 'Evaluación inicial';
-  if (trigger === 'lesson_count') return `${threshold} lección${threshold !== 1 ? 'es' : ''} completada${threshold !== 1 ? 's' : ''}`;
+  if (trigger === 'lesson_count') return threshold === 1 ? '1 lección completada' : `${threshold} lecciones completadas`;
   if (trigger === 'area_first') return `Inicio en ${AREA_LABEL[area ?? ''] ?? area ?? ''}`;
   if (trigger === 'area_complete') return `${AREA_LABEL[area ?? ''] ?? area ?? ''} completada`;
   return 'Logro';
