@@ -71,7 +71,8 @@ export default function DashboardScreen() {
           <AchievementsSummary
             earned={journey?.achievements_earned ?? 0}
             total={journey?.achievements_total ?? 14}
-            onSeeAll={() => router.push('/(app)/profile')}
+            onSeeAll={() => router.push('/(app)/achievements' as any)}
+            onJourney={() => router.push('/(app)/journey' as any)}
           />
         </View>
       </ScrollView>

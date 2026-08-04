@@ -9,9 +9,10 @@ interface Props {
   earned: number;
   total: number;
   onSeeAll: () => void;
+  onJourney?: () => void;
 }
 
-export function AchievementsSummary({ earned, total, onSeeAll }: Props) {
+export function AchievementsSummary({ earned, total, onSeeAll, onJourney }: Props) {
   const progress = total > 0 ? earned / total : 0;
   const pct = Math.round(progress * 100);
   const remaining = total - earned;
@@ -46,9 +47,11 @@ export function AchievementsSummary({ earned, total, onSeeAll }: Props) {
         <ProgressBar progress={progress} height={10} />
 
         {pct >= 85 && (
-          <Text style={styles.hint}>
-            🎓 ¡Ya puedes graduarte cuando quieras!
-          </Text>
+          <Pressable onPress={onJourney}>
+            <Text style={styles.hint}>
+              🎓 ¡Ya puedes graduarte cuando quieras! Ver Mi Camino ›
+            </Text>
+          </Pressable>
         )}
       </Card>
     </View>
