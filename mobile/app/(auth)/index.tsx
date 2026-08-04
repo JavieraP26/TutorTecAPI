@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { router } from 'expo-router';
 import { useAuth } from '@/contexts/AuthContext';
+import api from '@/lib/api';
 import { colors } from '@/constants/colors';
 import { fontFamily, fontSize } from '@/constants/typography';
 import { radius, spacing } from '@/constants/spacing';
@@ -11,11 +12,21 @@ export default function SplashScreen() {
 
   useEffect(() => {
     if (isLoading) return;
-    if (isAuthenticated) {
-      router.replace('/(app)');
-    } else {
+    if (!isAuthenticated) {
       router.replace('/(auth)/onboarding');
+      return;
     }
+    // Usuario autenticado: verificar si necesita evaluación inicial
+    api
+      .get<{ stage: string }>('/journey/status')
+      .then(({ data }) => {
+        if (data.stage === 'onboarding') {
+          router.replace('/(auth)/assessment');
+        } else {
+          router.replace('/(app)');
+        }
+      })
+      .catch(() => router.replace('/(app)'));
   }, [isAuthenticated, isLoading]);
 
   return (
