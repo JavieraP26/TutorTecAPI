@@ -65,6 +65,11 @@ export default function AppLayout() {
           ),
         }}
       />
+      {/* Pantallas de fase 5 — ocultas de la barra de tabs */}
+      <Tabs.Screen name="achievements" options={{ href: null }} />
+      <Tabs.Screen name="requests" options={{ href: null }} />
+      <Tabs.Screen name="journey" options={{ href: null }} />
+
       <Tabs.Screen
         name="profile"
         options={{
