@@ -1,5 +1,6 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 import { storage } from './storage';
+import { captureException } from './sentry';
 
 const BASE_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:8000';
 
@@ -39,6 +40,10 @@ api.interceptors.response.use(
     const original = error.config as InternalAxiosRequestConfig & { _retry?: boolean };
 
     if (error.response?.status !== 401 || original._retry) {
+      // Capturar errores de servidor (5xx) en Sentry
+      if (!error.response || (error.response.status >= 500)) {
+        captureException(error);
+      }
       return Promise.reject(error);
     }
 
