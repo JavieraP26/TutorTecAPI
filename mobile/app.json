@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "TecnoAmigo",
-    "slug": "tecnoamigo",
+    "name": "TutorTec",
+    "slug": "tutortec",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "scheme": "tecnoamigo",
+    "scheme": "tutortec",
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "cl.tecnoamigo.app"
+      "bundleIdentifier": "cl.tutortec.app"
     },
     "android": {
-      "package": "cl.tecnoamigo.app",
+      "package": "cl.tutortec.app",
       "adaptiveIcon": {
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",

@@ -1,4 +1,4 @@
-# Plan de Implementación — TecnoAmigo
+# Plan de Implementación — TutorTec
 
 > Plataforma de inclusión digital para adultos mayores (65+) en Chile.  
 > Estado actual: backend completo (99 tests), frontend Fase 1 terminada.
@@ -69,7 +69,7 @@
 ## 2. Arquitectura
 
 ```
-TecnoAmigoAPI/
+TutorTecAPI/
 ├── backend/         FastAPI + SQLAlchemy + asyncpg
 │   ├── app/
 │   │   ├── routers/   (11 módulos de endpoints)
@@ -363,7 +363,7 @@ PRE_AUTH_SECRET_KEY=<256-bit random>
 TWILIO_ACCOUNT_SID=...
 TWILIO_AUTH_TOKEN=...
 TWILIO_PHONE_NUMBER=+1...
-ALLOWED_ORIGINS=https://tecnoamigo.cl,https://admin.tecnoamigo.cl
+ALLOWED_ORIGINS=https://tutortec.cl,https://admin.tutortec.cl
 ENVIRONMENT=production
 SENTRY_DSN=...  (pendiente)
 ```
@@ -400,8 +400,8 @@ npx expo install @sentry/react-native
 Configurar proyecto separado para backend y mobile en sentry.io (plan gratuito suficiente al inicio).
 
 ### Dominio (opcional pero recomendado)
-- `api.tecnoamigo.cl` → Railway (CNAME)
-- `tecnoamigo.cl` → landing page (puede ser un simple HTML en GitHub Pages por ahora)
+- `api.tutortec.cl` → Railway (CNAME)
+- `tutortec.cl` → landing page (puede ser un simple HTML en GitHub Pages por ahora)
 
 ---
 
@@ -466,10 +466,10 @@ mobile/
 E2E con Maestro (más simple que Detox, no requiere Xcode/Gradle corriendo):
 ```yaml
 # .maestro/flows/auth_flow.yaml
-appId: cl.tecnoamigo.app
+appId: cl.tutortec.app
 ---
 - launchApp
-- assertVisible: "Bienvenido a TecnoAmigo"
+- assertVisible: "Bienvenido a TutorTec"
 - tapOn: "Comenzar"
 - tapOn: "Enviar código SMS"
 - assertVisible: "Ingresa el código"

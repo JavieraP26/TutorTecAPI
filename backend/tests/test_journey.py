@@ -223,4 +223,4 @@ async def test_get_summaries_after_graduation(client, db_session):
 
     assert len(summaries) == 1
     assert summaries[0]["summary_type"] == "graduation"
-    assert summaries[0]["title"] == "Mi recorrido en TecnoAmigo"
+    assert summaries[0]["title"] == "Mi recorrido en TutorTec"

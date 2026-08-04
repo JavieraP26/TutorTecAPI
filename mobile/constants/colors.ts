@@ -1,5 +1,5 @@
 export const colors = {
-  // Primario — verde TecnoAmigo
+  // Primario — verde TutorTec
   primary: '#00a800',
   primaryLight: '#e6f4e6',
   primaryMid: '#dae7da',

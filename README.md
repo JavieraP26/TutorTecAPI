@@ -1,4 +1,4 @@
-# TecnoAmigo
+# TutorTec
 
 > Plataforma de inclusión digital para adultos mayores (65+) en Chile.  
 > Sin fines de lucro. Basada en evidencia científica y diseño centrado en capacidades.
